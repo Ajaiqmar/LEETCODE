@@ -1,3 +1,6 @@
+// DIAMETER OF A BINARY TREE - MAXIMUM NUMBER OF EDGES BETWEEN TWO NODES 
+// APPROACH - FINDING THE LENGTH OF THE LEFT AND RIGHT SUB-TREE FOR EACH NODE AND RETURNING THE MAXIMUM ONE
+
 class Solution {
     
     public int lengthOfTheNode(TreeNode root)
@@ -9,7 +12,7 @@ class Solution {
         return 0;
     }
     
-    public int inorderTraversal(TreeNode root)
+    public int Traversal(TreeNode root)
     {
         if(root!=null)
         {
@@ -19,7 +22,7 @@ class Solution {
     }
     
     public int diameterOfBinaryTree(TreeNode root) {
-        int diameter = this.inorderTraversal(root);
+        int diameter = this.Traversal(root);
         return diameter;
     }
 }
