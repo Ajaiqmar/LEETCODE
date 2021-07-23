@@ -1,0 +1,42 @@
+class Solution {
+    public static int postorder(TreeNode root)
+    {
+        if(root != null)
+        {
+            int a = postorder(root.left);
+            int b = postorder(root.right);
+            
+            if(a == 0)
+            {
+                root.left = null;
+            }
+            
+            if(b == 0)
+            {
+                root.right = null;
+            }
+            
+            if(root.val == 1)
+            {
+                return a+b+1;
+            }
+            else
+            {
+                return a+b;
+            }
+        }
+        return 0;
+    }
+    
+    public TreeNode pruneTree(TreeNode root) 
+    {
+        int val = postorder(root);
+        
+        if(val > 0)
+        {
+            return root;
+        }
+        
+        return null;
+    }
+}
