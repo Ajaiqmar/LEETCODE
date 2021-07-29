@@ -3,12 +3,14 @@
 
 class MyHashSet {
     int[] hashSet;
-
+    
+    // INITIALISE THE HASHSET
     public MyHashSet() 
     {
         hashSet = new int[1000001];
     }
     
+    // ADDING ELEMENT ONTO THE HASHSET.
     public void add(int key) 
     {
         if(hashSet[key] == 0)
@@ -17,6 +19,7 @@ class MyHashSet {
         }
     }
     
+    // REMOVING ELEMENT FROM THE HASHSET.
     public void remove(int key) 
     {
         if(hashSet[key] == 1)
@@ -25,6 +28,7 @@ class MyHashSet {
         }
     }
     
+    // CHECKING WHETHER THE HASHSET CONTAINS THE GIVEN VALUE. 
     public boolean contains(int key) 
     {
         return hashSet[key] == 1;
