@@ -1,6 +1,9 @@
+// THE PROBLEM STATEMENT IS TO IMPLEMENT A HASHSET WITHOUT USING THE BUILT-IN HASHSET FUNCTION.
+// SINCE THE VALUES ARE IN INTEGER FORMAT, MY APPROACH IS TO INITIALISE AN ARRAY AND THEN CARRY OUT THE HASHSET OPERATIONS.
+
 class MyHashSet {
     int[] hashSet;
-    /** Initialize your data structure here. */
+
     public MyHashSet() 
     {
         hashSet = new int[1000001];
@@ -22,9 +25,11 @@ class MyHashSet {
         }
     }
     
-    /** Returns true if this set contains the specified element */
     public boolean contains(int key) 
     {
         return hashSet[key] == 1;
     }
 }
+
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(N)
