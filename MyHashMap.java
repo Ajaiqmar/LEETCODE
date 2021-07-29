@@ -4,11 +4,12 @@
 class MyHashMap {
     int HashMap[];
     
+    // INITIALISNG THE HASHMAP.
     public MyHashMap() {
         HashMap = new int[1000001];
     }
     
-
+    // INSERTING THE VALUE INTO THE HASHMAP.
     public void put(int key, int value) {
         if(value == 0)
         {
@@ -20,6 +21,7 @@ class MyHashMap {
         }
     }
     
+    // GETTING THE VALUE FROM THE HASHMAP.
     public int get(int key) {
         if(HashMap[key] == 0)
         {
@@ -33,6 +35,7 @@ class MyHashMap {
         return HashMap[key];
     }
     
+    // REMOVING THE VALUE FROM THE HASHMAP.
     public void remove(int key) {
         HashMap[key] = 0;
     }
