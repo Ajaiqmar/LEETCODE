@@ -1,9 +1,24 @@
+# THE PROBLEM STATEMENT IS TO FIND MAXIMISED SUM BY ADDING THE MINIMUM ELEMENT FROM THE EACH OF THE N PAIRS FORMED WITH 2N ELEMENTS IN THE ARRAY.
+
+# MY APPROACH IS TO SORT THE ARRAY AND ADD THE ELEMNTS AT THE ODD INDEX TO RETURN THE MAXIMUM SUM.
+
+# I.E : GIVEN ARRAY IS [2,3,4,1]
+# THE REQUIRED MAXIMUM SUM IS 3+1 = 4
+
+# AFTER SORTING, THE ARRAY BECOMES [1,2,3,4]
+# ADDING ELEMENTS AT THE ODD INDEX, WE GET 1+3 = 4. VOILA!!
+
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
+        # SORTING THE ARRAY
         nums.sort()
         ans = 0
         
+        # ADDING THE ELEMENTS AT THE ODD INDEX.
         for i in range(0,len(nums),2):
             ans += nums[i]
         
         return ans
+  
+# TIME COMPLEXITY : O(N LOG N)
+# SPACE COMPLEXITY : O(1)
