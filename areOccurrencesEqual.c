@@ -1,12 +1,19 @@
+// THE PROBLEM STATEMENT IS TO CHECK IF THE GIVEN STRING IS A GOOD STRING. A GOOD STRING IS A STRING WHERE ALL THE LETTERS IN THE STRING OCCURS SAME NUMBER OF TIMES.
+
+// MY APPROACH IS TO STORE THE CHARACTERS AND THE NUMBER OF OCCURRENCES IN A HASH TABLE, WHERE THE KEY IS THE ALPHABETS ASCII VALUE.
+// AND THEN TRAVERSE THE STRING ONCE AGAIN TO CHECK IF ALL THE CHARACTERS OCCURS SAME NUMBER OF TIMES.
+
 bool areOccurrencesEqual(char * s)
 {
     int alphabets[26]={0};
     
+    // TRAVERSING THE STRING TO COUNT THE NUMBER OF OCCURRENCES OF THE EACH CHARACTER.
     for(int i=0;i<strlen(s);i++)
     {
         alphabets[s[i]-'a']++;
     }
     
+    // CHECKING IF ALL THE CHARCTERS OCCUR SAME NUMBER OF TIMES.
     for(int i=1;i<strlen(s);i++)
     {
         if(alphabets[s[i]-'a'] != alphabets[s[i-1]-'a'])
@@ -17,3 +24,6 @@ bool areOccurrencesEqual(char * s)
     
     return true;
 }
+
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(N)
