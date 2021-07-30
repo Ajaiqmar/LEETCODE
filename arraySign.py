@@ -12,11 +12,14 @@ class Solution(object):
     def arraySign(self, nums):
         product = 1
         
+        # TRAVERSES THE ARRAY TO FIND THE PRODUCT OF ALL THE ELEMENTS.
         for i in nums:
             product *= i
         
+        # CHECKS IF THE VALUE IS ZERO
         if(product == 0):
             return 0
+        # CHECKS IF THE VALUE IS GREATER THAN ZERO
         elif(product > 0):
             return 1
         else:
