@@ -1,0 +1,27 @@
+// THE PROBLEM STATEMENT IS TO CALCAULATE THE MINIMUM SECONDS NEEDED TO VISIT ALL THE GIVEN POINTS IN A GIVEN 2D PLANE, IN THE SAME ORDER THAT HAS BEEN GIVEN AS A
+// 2D MATRIX.
+
+// IN A UNIT SECOND, WE CAN MOVE 1 UNIT VERTICALLY OR 1 UNIT HORIZONTALLY OR 1 UNIT DIGONALLY.
+
+// MY APPROACH IS TO SIMPLY THE TRAVERSE THE GIVEN POINTS MATRIX FROM INDEX 1 AND FIND THE HORIZONTAL AND VERTICAL DISTANCE BETWEEN THIS INDEX AND THE PREVIOUS INDEX.
+// AND ADD THE MAXIMUM DISTANCE TO THE MINTIME VARIABLE.
+
+class Solution 
+{
+    public int minTimeToVisitAllPoints(int[][] points) 
+    {
+        int minTime = 0;
+        
+        // TRAVERSING THE GIVEN POINTS MATRIX 
+        for(int i=1;i<points.length;i++)
+        {
+            int xd = Math.abs(points[i][0]-points[i-1][0]),yd = Math.abs(points[i][1]-points[i-1][1]);
+            minTime += Math.max(xd,yd);
+        }
+        
+        return minTime;
+    }
+}
+
+// TIME COMPLEXITY : O(R) WHERE R IS THE NUMBER OF ROWS IN THE POINT MATRIX.
+// SPACE COMPLEXITY : O(1)
