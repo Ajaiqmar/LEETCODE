@@ -35,4 +35,4 @@ int canBeTypedWords(char * text, char * brokenLetters)
 }
 
 // TIME COMPLEXITY : O(N)
-// SPACE COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(M) WHERE M IS THE NUMBER OF CHARACTERS PRESENT IN THE KEYBOARD.
