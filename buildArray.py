@@ -1,0 +1,27 @@
+# THE PROBLEM STATEMENT IS TO RETURN AN ARRAY THAT CONTAINS THE STACK OPERATIONS TO BE PERFORMED INORDER TO OBTAIN THE TARGET ARRAY.
+# THE ELEMENTS ARE GOING TO BE INSERTED FROM THE THE LIST {1,2,3..,N} ONTO THE STACK.
+
+# MY APPROACH IS TO TRAVERSE THE ARRAY AND KEEP A COUNTER AS WELL WHICH IS INITIALISED TO 1, NOW WHILE TRAVERSING CHECK WHETHER THE COUNTER IS 
+# EQUAL TO CURRENT VAL IF IT IS NOT UNTIL THEY BOTH BECOME EQUAL APPEND THE "PUSH" AND "POP" FUNCTION TO THE ANSWER ARRAY AND INCREMENT THE COUNTER. 
+# THEN ADD THE "PUSH" FUNCTION AND INCREMENT COUNTER VALUE.
+
+class Solution:
+    def buildArray(self, target: List[int], n: int) -> List[str]:
+        ans = []
+        val = 1
+        
+        # TRAVERSING THE TARGET ARRAY.
+        for i in target:
+            
+            while(val < i):
+                ans.append("Push")
+                ans.append("Pop")
+                val += 1
+                
+            ans.append("Push")
+            val += 1
+        
+        return ans
+      
+# TIME COMPLEXITY : O(N) EVEN THOUGH WE ARE NESTING THE LOOPS, WE ARE TRAVERSING FROM 1 TO N WITH BREAKPOINTS, SO IT IS O(N).
+# SPACE COMPLEXITY : O(N)
