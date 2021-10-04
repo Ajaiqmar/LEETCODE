@@ -1,0 +1,40 @@
+// THE PROBLEM STATEMENT IS TO FIND WHETHER THE TARGET VALUE IS PRESENT IN THE GIVEN MATRIX. THE ROW AND THE COLUMN IN THE GIVEN MATRIX IS SORTED IN ASCENDING ORDER.
+
+// MY APPROACH IS TO SEARCH WHETHER THE GIVEN TARGET IS EQUAL TO THE MATRIX VALUE FROM THE LEFTMOST VALUE OF THE FIRST ROW, NOW SINCE THE ROW AND THE COLUMN IS SORTED,
+// IF CURRENT MATRIX VALUE IS GREATER THAN THE TARGET WE DECREMENT THE COLUMN VALUE BY 1,  ELSE WE INCREMENT THE ROW VALUE BY ONE. THE REASON BEING IS THE TARGET
+// VALUE WILL BE PRESENT IN THE COLUMN WHEN THE TARGET IS GREATER THAN OR EQUAL TO THE FIRST VALUE IN THE COLUMN AND THE TARGET IS LESSER THAN OR EQUAL TO THE 
+// LAST VALUE IN THE COLUMN. SO, WE DECREMENT THE COLUMN VALUE UNTIL THE FIRST VALUE IN THE COLUMN IS LESSER THAN OR EQUAL TO THE TARGET VALUE, THEN WE WILL INCREMENT
+// THE ROW VALUE.
+
+class Solution 
+{
+    public boolean searchMatrix(int[][] matrix, int target) 
+    {
+        int r = 0,c = (matrix[0].length-1);
+        // TRAVERSING THE MATRIX.
+        while(r < matrix.length && c >= 0)
+        {
+            if(matrix[r][c] == target)
+            {
+                return true;
+            }
+            
+            // DECREMENTING THE COLUMN VALUE.
+            if(matrix[r][c] > target)
+            {
+                c -= 1;
+            }
+            // INCREMENTING THE ROW VALUE.
+            else
+            {
+                r += 1;
+            }
+        }
+        
+        return false;
+    }
+}
+
+// TIME COMPLEXITY : O(M+N)
+// SPACE COMPLEXITY : O(1)
+
