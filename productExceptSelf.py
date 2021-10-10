@@ -1,0 +1,30 @@
+# THE PROBLEM STATEMENT IS TO RETURN AN ARRAY OF LENGTH N WHERE N IS THE LENGTH OF THE GIVEN ARRAY, WHERE THE EACH INDEX CONTAINS THE PRODUCT OF
+# ALL THE INTEGERS IN THE GIVEN ARRAY EXCEPT THE CURRENT INDEX. I.E. INPUT: nums = [1,2,3,4] , OUTPUT: [24,12,8,6].
+
+# MY APPROACH IS TO FIRSTLY INITIALISE AN ARRAY OF LENGTH OF THE GIVEN ARRAY, THEN TRAVERSE THE ARRAY FROM LEFT TO RIGHT AND RIGHT TO LEFT WHILE TRAVERSING FIND THE
+# PRODUCT OF THE ELEMENTS IN THE ARRAY AND ASSIGN THE VALUE TO THE ANS ARRAY. FINALLY RETURN THE ARRAY.
+
+# FOLLOW UP QUESTION WAS TO CARRY OUT FUNCTION IN O(1) EXTRA SPACE ( THE OUTPUT ARRAY WOULDN'T CONSIDERED AS EXTRA SPACE) , O(N) TIME AND WITHOUT
+# USING THE DIVISION OPERATION.
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        ans = [1 for i in range(n)]
+        
+        pr = 1
+        # TRAVERSING THE ARRAY FROM LEFT TOB RIGHT.
+        for i in range(n):
+            ans[i] = ans[i]*pr
+            pr = pr*nums[i]
+        
+        pr = 1
+        # TRAVERSING THE ARRAY FROM RIGHT TO LEFT.
+        for i in range(n-1,-1,-1):
+            ans[i] = ans[i]*pr
+            pr = pr*nums[i]
+        
+        return ans
+      
+# TIME COMPLEXITY : O(N)
+# SPACE COMPLEXITY : O(1)
