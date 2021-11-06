@@ -1,0 +1,48 @@
+// THE PROBLEM STATEMENTV IS TO FIND THE NUMBERS THAT EXIST ONLY ONCE IN THE GIVEN ARRAY. THERE WILL BE ONLY TWO NUMBERS THAT OCCUR ONCE IN THE GIVEN ARRAY.
+// OTHERS WILL OCCUR TWICE IN THE GIVEN ARRAY.
+
+// MY APPROACH IS TO USE THE XOR BITWISE OPERATION TO WEED OUT THE NUMBERS THAT EXIST TWICE. FINALLY, ONLY THE NUMBERS THAT EXIST ONCE REMAIN.
+// NOW, WE KNOW THAT (1 XOR 0 = 1) AND (0 XOR 1 = 1), SO THEN THE BITWISE XOR OF THE ARRAY'S SET BITS WILL EITHER BE PRESENT IN EITHER OF THE PAIRS BUT NEVER
+// IN BOTH. SO WE CONSIDER ANY OF THE SET BITS IN THE BITWISE XOR OF THE ARRAY, AND PERFORM BITWISE AND TO ALL THE ARRAY, IF THE VALUE IS NOT
+// ZERO THEN AGAIN BITWISE XOR TO A NEW VARIABLE, THIS WILL YIELD ONE OF THE NUMBERS THAT EXIST ONLY ONCE. FINALLY, WE COULD DERIVE
+// THE OTHER USING THE BITWISE XOR OF THE ARRAY.
+
+// I.E : IF [1,2,1,3,2,5] IS THE GIVEN ARRAY, THEN THE BITWISE XOR OF THE ARRAY IS 6 WHICH WEEDS OUT THE NUMBERS THAT OCCUR TWICE.
+// WE CAN VERIFY THIS, BECAUSE 3^5 = 6. NOW WE CONSIDER ONE OF THE SET BITS, WE ARE TAKING 10 FROM THE 6 = 110.
+// NOW, WE XOR THE VALUES WHICH HAVE THE SAME SET BIT, SO, [2,2,3]. XOR OF THIS ARRAY WILL YIELD 3, WHICH IS ONE OF THE NUMBERS.
+// WITH WHICH WE COULD DERIVE THE OTHER ONE.
+
+class Solution 
+{
+    public:
+        vector<int> singleNumber(vector<int>& nums) 
+        {
+            vector<int> ans;
+            long x = 0;
+            
+            // FINDING THE BITWISE XOR OF ALL THE ELEMENTS IN THE ARRAY.
+            for(int i=0;i<nums.size();i++)
+            {
+                x = (x^nums[i]);
+            }
+            
+            long rsb = x & (-x);
+            int y = 0;
+            // FINDING THE BITWISE XOR OF ALL THE ELEMENTS TAHT MATCH THE GIVEN SET BIT.
+            for(int i=0;i<nums.size();i++)
+            {
+                if((rsb&nums[i]) == rsb)
+                {
+                    y = (y^nums[i]);
+                }
+            }
+            
+            ans.push_back(y);
+            ans.push_back(x^y);
+            
+            return ans;
+        }
+};
+
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(1)
