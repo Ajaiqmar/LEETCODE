@@ -6,7 +6,7 @@
 <h2> 📱TECHNOLOGY STACK </h2>
 
 <a href="https://docs.oracle.com/en/java/"><img src="https://img.shields.io/badge/Java-%20-green" /></a>
-<a href=""><img src="https://img.shields.io/badge/Python-%20-blue" /></a>
-<a href=""><img src="https://img.shields.io/badge/C-%20-yellow" /></a>
-<a href=""><img src="https://img.shields.io/badge/C++-%20-yellowgreen" /></a>
-<a href=""><img src="https://img.shields.io/badge/SQL-%20-blue" /></a>
+<a href="https://www.python.org/doc/"><img src="https://img.shields.io/badge/Python-%20-blue" /></a>
+<a href="https://devdocs.io/c/"><img src="https://img.shields.io/badge/C-%20-yellow" /></a>
+<a href="https://devdocs.io/cpp/"><img src="https://img.shields.io/badge/C++-%20-yellowgreen" /></a>
+<a href="https://www.w3schools.com/sql/"><img src="https://img.shields.io/badge/SQL-%20-blue" /></a>
