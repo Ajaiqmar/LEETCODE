@@ -5,7 +5,8 @@
 
 <h2> 📱TECHNOLOGY STACK </h2>
 
-<a href="https://docs.oracle.com/en/java/"><img src="https://img.shields.io/badge/JAVA-%20-green" /></a>
-<<a href=""><img src="https://img.shields.io/badge/Python-%20-blue" /></a>
+<a href="https://docs.oracle.com/en/java/"><img src="https://img.shields.io/badge/Java-%20-green" /></a>
+<a href=""><img src="https://img.shields.io/badge/Python-%20-blue" /></a>
 <a href=""><img src="https://img.shields.io/badge/C-%20-yellow" /></a>
 <a href=""><img src="https://img.shields.io/badge/C++-%20-yellowgreen" /></a>
+<a href=""><img src="https://img.shields.io/badge/SQL-%20-blue" /></a>
